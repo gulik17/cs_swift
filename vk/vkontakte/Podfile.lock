@@ -1,0 +1,16 @@
+PODS:
+  - INSPhotoGallery (1.2.8)
+
+DEPENDENCIES:
+  - INSPhotoGallery
+
+SPEC REPOS:
+  trunk:
+    - INSPhotoGallery
+
+SPEC CHECKSUMS:
+  INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
+
+PODFILE CHECKSUM: 2270405aa329fd6aec137d7bb47bfe18db74cf25
+
+COCOAPODS: 1.8.4
