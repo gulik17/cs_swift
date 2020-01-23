@@ -31,10 +31,10 @@ extension LoginController: WKNavigationDelegate {
         Session.shared.token = params["access_token"]!
         Session.shared.userId = Int(params["user_id"]!) ?? 0
 
-        vkAPI.getFriendList(token: Session.shared.token)
-        vkAPI.getFriendPhotos(token: Session.shared.token, ownerId: "-1")
-        vkAPI.getMyGroups(token: Session.shared.token)
-        vkAPI.searchGroups(token: Session.shared.token, query: "Music")
+        //vkAPI.getFriendList(token: Session.shared.token)
+        //vkAPI.getFriendPhotos(token: Session.shared.token, ownerId: "-1")
+        //vkAPI.getMyGroups(token: Session.shared.token)
+        //vkAPI.searchGroups(token: Session.shared.token, query: "Music")
         
         decisionHandler(.cancel)
     }

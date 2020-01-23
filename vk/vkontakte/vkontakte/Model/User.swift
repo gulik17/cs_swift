@@ -7,10 +7,10 @@
 //
 
 struct User {
-    let id = 0
-    let first_name = ""
-    let last_name = ""
-    let avatar = ""
-    let photos = [String]()
+    var id = 0
+    var first_name = ""
+    var last_name = ""
+    var avatar = ""
+    var photos = [String]()
         
 }

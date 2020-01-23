@@ -7,9 +7,9 @@
 //
 
 struct Friend {
-    let id = 0
-    let firstName = "first_name"
-    let lastName = "last_name"
-    let photo50 = "photo_50"
-    let online = 0
+    var id = 0
+    var firstName = "first_name"
+    var lastName = "last_name"
+    var photo50 = "photo_50"
+    var online = 0
 }

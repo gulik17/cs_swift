@@ -7,10 +7,15 @@
 //
 
 struct Group {
-    let id = 0
-    let name = ""
-    let type = ""
-    let isClosed = ""
-    let isMember = ""
-    let photo50 = ""
+    var id = 0
+    var name = ""
+    var screenName = ""
+    var isClosed = 0
+    var type = ""
+    var isAdmin = 0
+    var isMember = 0
+    var isAdvertiser = 0
+    var photo50 = ""
+    var photo100 = ""
+    var photo200 = ""
 }

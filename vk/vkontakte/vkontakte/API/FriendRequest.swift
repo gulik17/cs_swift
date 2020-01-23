@@ -35,14 +35,13 @@ struct FriendItem: Decodable {
 extension FriendRequest {
     func toFriends() -> [Friend] {
         var friends = [Friend]()
-        request.items.forEach { (friendItem) in
-            friends.append(Friend(id: friendItem.id,
-                                firstName: friendItem.firstName,
-                                lastName: friendItem.lastName,
-                                photo50: friendItem.photo50,
-                                online: friendItem.online))
+        request.items.forEach { (item) in
+            friends.append(Friend(id: item.id,
+                                firstName: item.firstName,
+                                lastName: item.lastName,
+                                photo50: item.photo50,
+                                online: item.online))
         }
         return friends
     }
 }
-

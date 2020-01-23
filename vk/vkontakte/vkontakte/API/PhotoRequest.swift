@@ -38,3 +38,14 @@ struct Size: Codable {
     }
 }
 
+extension PhotoRequest {
+    func toPhotos() -> [Photo] {
+        var photos = [Photo]()
+        request.items.forEach { (item) in
+            if let size = item.sizes.first(where: { $0.type == .x }) {
+                photos.append(Photo(imageName: size.url))
+            }
+        }
+        return photos
+    }
+}
