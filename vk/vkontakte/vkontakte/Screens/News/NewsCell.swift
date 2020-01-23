@@ -7,6 +7,6 @@
 //
 
 import UIKit
-class NewCell: UITableViewCell {
+class NewsCell: UITableViewCell {
 
 }

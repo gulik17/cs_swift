@@ -6,13 +6,11 @@
 //  Copyright © 2019 Home. All rights reserved.
 //
 
-import UIKit
-
-class User {
-    var id = 0
-    var first_name = ""
-    var last_name = ""
-    var avatar = ""
-    var photos = [String]()
+struct User {
+    let id = 0
+    let first_name = ""
+    let last_name = ""
+    let avatar = ""
+    let photos = [String]()
         
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewList: UITableViewController {
+class NewsList: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class NewList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewTemplate", for: indexPath) as? NewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTemplate", for: indexPath) as? NewsCell else {
             return UITableViewCell()
         }
         return cell

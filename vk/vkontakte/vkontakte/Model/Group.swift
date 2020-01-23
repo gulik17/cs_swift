@@ -6,11 +6,11 @@
 //  Copyright © 2019 Home. All rights reserved.
 //
 
-import UIKit
-
-class Group {
-    var id = 0
-    var name = ""
-    var avatar = ""
-    
+struct Group {
+    let id = 0
+    let name = ""
+    let type = ""
+    let isClosed = ""
+    let isMember = ""
+    let photo50 = ""
 }
