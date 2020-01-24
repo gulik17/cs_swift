@@ -23,31 +23,27 @@ class FriendList: UITableViewController {
         var avatarPath: String
     }
     
-    var friendSection = [Section<User>]()
+    var friendSection = [Section<Friend>]()
     var friendSectionTitles = [String]()
     
-    var friends = [
-        User(name: "Артем", surname: "Аверин", isOnline: false, avatarPath: "user1"),
-        User(name: "Сидор", surname: "Сидоров", isOnline: false, avatarPath: "user2"),
-        User(name: "Василий", surname: "Кошкин", isOnline: true, avatarPath: "user3"),
-        User(name: "Александр", surname: "Стаценко", isOnline: false, avatarPath: "user1"),
-        User(name: "Аскар", surname: "Аитов", isOnline: false, avatarPath: "user3"),
-        User(name: "Борис", surname: "Борисов", isOnline: false, avatarPath: "user1"),
-        User(name: "Виктор", surname: "Баранов", isOnline: true, avatarPath: "user3"),
-        User(name: "Иван", surname: "Иванов", isOnline: false, avatarPath: "user2"),
-        User(name: "Петр", surname: "Петров", isOnline: false, avatarPath: "user1"),
-        User(name: "Василий", surname: "Пупкин", isOnline: false, avatarPath: "user2"),
-        User(name: "Антон", surname: "Колесов", isOnline: false, avatarPath: "user3"),
-        User(name: "Иван", surname: "Вдовин", isOnline: false, avatarPath: "user1"),
-        User(name: "Денис", surname: "Ларионов", isOnline: false, avatarPath: "user2")
-    ]
+    var friends = [Friend]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendsSearchBar.delegate = self
-        let groupedDictionary = Dictionary(grouping: friends, by: {$0.surname.prefix(1)})
-        friendSection = groupedDictionary.map{ Section(title: String($0.key), items: $0.value) }
-        friendSection.sort { $0.title < $1.title }
+        let api = VKApi()
+        api.getFriendList(token: Session.shared.token) { (data: Swift.Result<[Friend], Error>) in
+            switch data {
+            case .failure(let error):
+                print(error)
+            case .success(let resData):
+                self.friends = resData
+                self.friendsSearchBar.delegate = self
+                let groupedDictionary = Dictionary(grouping: self.friends, by: {$0.lastName.prefix(1)})
+                self.friendSection = groupedDictionary.map{ Section(title: String($0.key), items: $0.value) }
+                self.friendSection.sort { $0.title < $1.title }
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,22 +66,22 @@ class FriendList: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = friendSection[indexPath.section].items[indexPath.row].name
-        let surname = friendSection[indexPath.section].items[indexPath.row].surname
+        let firstName = friendSection[indexPath.section].items[indexPath.row].firstName
+        let lastName = friendSection[indexPath.section].items[indexPath.row].lastName
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTemplate", for: indexPath) as? FriendCell else {
             return UITableViewCell()
         }
-        cell.userName.text = surname + " " + name
+        cell.userName.text = lastName + " " + firstName
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let name = friendSection[indexPath.section].items[indexPath.row].name
-        let surname = friendSection[indexPath.section].items[indexPath.row].surname
+        let firstName = friendSection[indexPath.section].items[indexPath.row].firstName
+        let lastName = friendSection[indexPath.section].items[indexPath.row].lastName
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "FriendPhotoController") as! FriendPhotoList
-        vc.user = name + " " + surname
+        vc.user = firstName + " " + lastName
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -95,13 +91,13 @@ class FriendList: UITableViewController {
 }
 extension FriendList: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let friendDictionary = Dictionary.init(grouping: friends.filter { (user) -> Bool in
-            if ( user.name.lowercased().contains(searchText.lowercased()) ) {
-                return user.name.lowercased().contains(searchText.lowercased())
+        let friendDictionary = Dictionary.init(grouping: friends.filter { (friend) -> Bool in
+            if ( friend.firstName.lowercased().contains(searchText.lowercased()) ) {
+                return friend.firstName.lowercased().contains(searchText.lowercased())
             } else {
-                return searchText.isEmpty ? true : user.surname.lowercased().contains(searchText.lowercased())
+                return searchText.isEmpty ? true : friend.lastName.lowercased().contains(searchText.lowercased())
             }
-        }) { $0.surname.prefix(1) }
+        }) { $0.firstName.prefix(1) }
         friendSection = friendDictionary.map { Section(title: String($0.key), items: $0.value) }
         friendSection.sort { $0.title < $1.title }
         tableView.reloadData()

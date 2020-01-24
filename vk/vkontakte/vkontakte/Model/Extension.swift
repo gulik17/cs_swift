@@ -10,6 +10,7 @@ import Foundation
 import WebKit
 
 extension LoginController: WKNavigationDelegate {
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
         guard let url = navigationResponse.response.url,
@@ -30,6 +31,7 @@ extension LoginController: WKNavigationDelegate {
         
         Session.shared.token = params["access_token"]!
         Session.shared.userId = Int(params["user_id"]!) ?? 0
+        
 
         //vkAPI.getFriendList(token: Session.shared.token)
         //vkAPI.getFriendPhotos(token: Session.shared.token, ownerId: "-1")
@@ -37,6 +39,8 @@ extension LoginController: WKNavigationDelegate {
         //vkAPI.searchGroups(token: Session.shared.token, query: "Music")
         
         decisionHandler(.cancel)
+
+        performSegue(withIdentifier: "loginSuccess", sender: nil)
     }
 }
 

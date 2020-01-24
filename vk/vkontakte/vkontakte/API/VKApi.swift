@@ -101,10 +101,13 @@ class VKApi {
                           method: .post,
                           parameters: parameters)
             .responseData{ (response) in
+                
                 switch response.result {
                 case .failure(let error):
                     finished(.failure(HTTPError.failedRequest(Message: error.localizedDescription)))
                 case .success(let data):
+                    //let output = String(data: data, encoding: String.Encoding.utf8)
+                    //print(output! as Any)
                     do {
                         let response = try JSONDecoder().decode(T.self, from: data)
                         finished(.success(response))

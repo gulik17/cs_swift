@@ -8,8 +8,7 @@
 
 struct Friend {
     var id = 0
-    var firstName = "first_name"
-    var lastName = "last_name"
-    var photo50 = "photo_50"
+    var firstName = ""
+    var lastName = ""
     var online = 0
 }
