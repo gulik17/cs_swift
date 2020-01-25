@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.9.1)
+  - INSPhotoGallery (1.2.8)
+
+DEPENDENCIES:
+  - Alamofire
+  - INSPhotoGallery
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - INSPhotoGallery
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
+
+PODFILE CHECKSUM: 7b3f29a40c8d545df014776f9a60bfa94fb48d8e
+
+COCOAPODS: 1.8.4
