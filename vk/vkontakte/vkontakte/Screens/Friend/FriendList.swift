@@ -16,13 +16,6 @@ class FriendList: UITableViewController {
         var items: [T]
     }
     
-    struct User {
-        var name: String
-        var surname: String
-        var isOnline: Bool
-        var avatarPath: String
-    }
-    
     var friendSection = [Section<Friend>]()
     var friendSectionTitles = [String]()
     
@@ -66,22 +59,28 @@ class FriendList: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let firstName = friendSection[indexPath.section].items[indexPath.row].firstName
-        let lastName = friendSection[indexPath.section].items[indexPath.row].lastName
+        let friendItem = friendSection[indexPath.section].items[indexPath.row]
+        let firstName = friendItem.firstName
+        let lastName = friendItem.lastName
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTemplate", for: indexPath) as? FriendCell else {
             return UITableViewCell()
         }
+        cell.id = friendItem.id
+        cell.firstName = friendItem.firstName
+        cell.lastName = friendItem.lastName
         cell.userName.text = lastName + " " + firstName
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id = friendSection[indexPath.section].items[indexPath.row].id
         let firstName = friendSection[indexPath.section].items[indexPath.row].firstName
         let lastName = friendSection[indexPath.section].items[indexPath.row].lastName
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "FriendPhotoController") as! FriendPhotoList
         vc.user = firstName + " " + lastName
+        vc.userId = id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

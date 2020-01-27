@@ -1,3 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-vkontakte/Pods-vkontakte-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/INSPhotoGallery/INSPhotoGallery.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework

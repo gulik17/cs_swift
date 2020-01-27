@@ -18,7 +18,7 @@ enum HTTPError: Error {
 class VKApi {
     private let vkURL = "https://api.vk.com/method/"
 
-    func getFriendList(token: String, result: @escaping (Swift.Result<[Friend], Error>) -> Void) {
+    func getFriendList(token: String, completion: @escaping (Swift.Result<[Friend], Error>) -> Void) {
         let request = vkURL + "friends.get"
 
         let params: [String: Any] = [
@@ -28,37 +28,24 @@ class VKApi {
             "v": "5.103"
         ]
 
-        getData(requestURL: request, parameters: params) { (data: Swift.Result<FriendRequest, Error>) in
-            switch data {
-            case .failure(let error):
-                result(.failure(error))
-            case .success(let resData):
-                result(.success(resData.toFriends()))
-            }
-        }
+        getData(requestURL: request, parameters: params) { completion($0) }
     }
     
-    func getFriendPhotos(token: String, ownerId: String, result: @escaping (Swift.Result<[Photo], Error>) -> Void) {
-        let request = vkURL + "photos.get"
+    func getFriendPhotoList(token: String, ownerId: Int, completion: @escaping (Swift.Result<[Photo], Error>) -> Void) {
+        let request = vkURL + "photos.getAll"
 
+        print(ownerId)
+        
         let params: [String: Any] = [
             "access_token": token,
             "owner_id": ownerId,
-            "album_id": "wall",
             "v": "5.103"
         ]
 
-        getData(requestURL: request, parameters: params) { (data: Swift.Result<PhotoRequest, Error>) in
-            switch data {
-            case .failure(let error):
-                result(.failure(error))
-            case .success(let resData):
-                result(.success(resData.toPhotos()))
-            }
-        }
+        getData(requestURL: request, parameters: params) { completion($0) }
     }
     
-    func getMyGroups(token: String, result: @escaping (Swift.Result<[Group], Error>) -> Void) {
+    func getGroupList(token: String, completion: @escaping (Swift.Result<[Group], Error>) -> Void) {
         let request = vkURL + "groups.get"
 
         let params: [String: Any] = [
@@ -67,17 +54,10 @@ class VKApi {
             "v": "5.103"
         ]
 
-        getData(requestURL: request, parameters: params) { (data: Swift.Result<GroupRequest, Error>) in
-            switch data {
-            case .failure(let error):
-                result(.failure(error))
-            case .success(let resData):
-                result(.success(resData.toGroups()))
-            }
-        }
+        getData(requestURL: request, parameters: params) { completion($0) }
     }
     
-    func searchGroups(token: String, query: String, result: @escaping (Swift.Result<[Group], Error>) -> Void) {
+    func searchGroups(token: String, query: String, completion: @escaping (Swift.Result<[Group], Error>) -> Void) {
         let request = vkURL + "groups.search"
 
         let params: [String: Any] = [
@@ -86,34 +66,23 @@ class VKApi {
             "v": "5.103"
         ]
 
-        getData(requestURL: request, parameters: params) { (data: Swift.Result<GroupRequest, Error>) in
-            switch data {
-            case .failure(let error):
-                result(.failure(error))
-            case .success(let resData):
-                result(.success(resData.toGroups()))
-            }
-        }
+        getData(requestURL: request, parameters: params) { completion($0) }
     }
     
-    func getData<T: Decodable>(requestURL: String, parameters: Parameters, finished: @escaping (Swift.Result<T, Error>) -> Void) {
+    func getData<T: Decodable>(requestURL: String, parameters: Parameters, completion: @escaping (Swift.Result<[T], Error>) -> Void) {
         Alamofire.request(requestURL,
                           method: .post,
                           parameters: parameters)
-            .responseData{ (response) in
-                
-                switch response.result {
-                case .failure(let error):
-                    finished(.failure(HTTPError.failedRequest(Message: error.localizedDescription)))
-                case .success(let data):
-                    //let output = String(data: data, encoding: String.Encoding.utf8)
-                    //print(output! as Any)
-                    do {
-                        let response = try JSONDecoder().decode(T.self, from: data)
-                        finished(.success(response))
-                    } catch {
-                        finished(.failure(HTTPError.decodableError))
-                    }
+            .responseData{ (result) in
+                guard let data = result.value else { return }
+                //let output = String(data: data, encoding: String.Encoding.utf8)
+                //print(output! as Any)
+                //let response = try! JSONDecoder().decode(T.self, from: data)
+                do {
+                    let result = try JSONDecoder().decode(CommonResponse<T>.self, from: data)
+                    completion(.success(result.response.items))
+                } catch {
+                    completion(.failure(HTTPError.decodableError))
                 }
         }
     }

@@ -13,12 +13,24 @@ private let reuseIdentifier = "FriendPhotoCell"
 
 class FriendPhotoList: UICollectionViewController {
     
-    var photoCollection = [1,2,3,4,5,6]
+    var photoCollection = [Photo]()
     
     var user: String?
+    var userId = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let api = VKApi()
+        api.getFriendPhotoList(token: Session.shared.token, ownerId: userId) { (data: Swift.Result<[Photo], Error>) in
+            switch data {
+            case .failure(let error):
+                print(error)
+            case .success(let resData):
+                self.photoCollection = resData
+                self.collectionView.reloadData()
+                print(self.photoCollection)
+            }
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -27,6 +39,15 @@ class FriendPhotoList: UICollectionViewController {
  
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendPhotoCell
+
+        
+
+        
+        let url = URL(string: photoCollection[indexPath.row].sizes.first(where: { $0.type == .m })!.url)
+        if let data = try? Data(contentsOf: url!) {
+            cell.photo.image = UIImage(data: data)
+        }
+        
         return cell
     }
     
