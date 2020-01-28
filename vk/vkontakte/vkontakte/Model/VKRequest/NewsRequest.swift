@@ -10,13 +10,13 @@ import Foundation
 
 struct News: Decodable {
     var type: String
-    var sourceId: Int
+    var sourceId: Int?
     var date: Int
-    var postId: Int
-    var postType: String
+    var postId: Int?
+    var postType: String?
     var text: String
-    var markedAsAds: Int
-    var attachments: [Attachment]
+    var markedAsAds: Int?
+    var attachments: [Attachment]?
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -31,16 +31,16 @@ struct News: Decodable {
 }
 
 struct Attachment: Codable {
-    var type: String
-    var link: Link
+    var type: String?
+    var link: Link?
 }
 
 struct Link: Codable {
     var url: String
     var title: String
-    var caption: String
+    var caption: String?
     var description: String
-    var photo: NewsPhoto
+    var photo: NewsPhoto?
 }
 
 struct NewsPhoto: Codable {

@@ -49,7 +49,7 @@ class VKApi {
         let params: [String: Any] = [
             "access_token": token,
             "filters": "post",
-            "count": "5",
+            "count": 5,
             "v": "5.103"
         ]
 
@@ -88,7 +88,7 @@ class VKApi {
                 guard let data = result.value else { return }
                 //let output = String(data: data, encoding: String.Encoding.utf8)
                 //print(output! as Any)
-                //let response = try! JSONDecoder().decode(T.self, from: data)
+                //let response = try! JSONDecoder().decode(CommonResponse<T>.self, from: data)
                 do {
                     let result = try JSONDecoder().decode(CommonResponse<T>.self, from: data)
                     completion(.success(result.response.items))

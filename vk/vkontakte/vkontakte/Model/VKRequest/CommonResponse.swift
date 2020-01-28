@@ -13,6 +13,6 @@ struct CommonResponse<T: Decodable>: Decodable {
 }
 
 struct CommonResponseArray<T: Decodable>: Decodable {
-    var count: Int
+    var count: Int?
     var items: [T]
 }

@@ -188,84 +188,87 @@
         <scene sceneID="9VP-SD-84E">
             <objects>
                 <tableViewController id="G2O-aP-cck" customClass="NewsList" customModule="vkontakte" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="357" estimatedRowHeight="290" sectionHeaderHeight="28" sectionFooterHeight="28" id="rrS-oh-8JE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="411" estimatedRowHeight="420" sectionHeaderHeight="28" sectionFooterHeight="28" id="rrS-oh-8JE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsTemplate" rowHeight="357" id="uVh-i9-Hph" customClass="NewsCell" customModule="vkontakte" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="357"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsTemplate" rowHeight="411" id="uVh-i9-Hph" customClass="NewsCell" customModule="vkontakte" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="411"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uVh-i9-Hph" id="hTR-qY-sno">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="357"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="411"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок новости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4Z-Jc-slz">
-                                            <rect key="frame" x="15" y="11" width="345" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок новости" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4Z-Jc-slz">
+                                            <rect key="frame" x="15" y="11" width="345" height="76"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VK_Blue_Logo_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-By-Yw4">
-                                            <rect key="frame" x="0.0" y="48" width="375" height="250"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Ykd-By-Yw4" secondAttribute="height" multiplier="3:2" id="vzc-jg-mgg"/>
-                                            </constraints>
-                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uPB-bR-D2B">
-                                            <rect key="frame" x="0.0" y="306" width="375" height="51"/>
+                                            <rect key="frame" x="0.0" y="361" width="375" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-WQ-cyU">
-                                                    <rect key="frame" x="0.0" y="14.5" width="94" height="22"/>
+                                                    <rect key="frame" x="0.0" y="14" width="94" height="22"/>
                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" title="99" image="suit.heart" catalog="system">
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-2h-5E1">
-                                                    <rect key="frame" x="94" y="14.5" width="93.5" height="22"/>
+                                                    <rect key="frame" x="94" y="14" width="93.5" height="22"/>
                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" title="44" image="bubble.right" catalog="system">
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ap-Xh-quy">
-                                                    <rect key="frame" x="187.5" y="14.5" width="94" height="22"/>
+                                                    <rect key="frame" x="187.5" y="14" width="94" height="22"/>
                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" title="67" image="arrowshape.turn.up.right" catalog="system">
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-CR-UBB">
-                                                    <rect key="frame" x="281.5" y="14.5" width="93.5" height="22"/>
+                                                    <rect key="frame" x="281.5" y="14" width="93.5" height="22"/>
                                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" title="45" image="eye" catalog="system">
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="EA2-xL-J0E"/>
+                                            </constraints>
                                         </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VK_Blue_Logo_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-By-Yw4">
+                                            <rect key="frame" x="0.0" y="103" width="375" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Ykd-By-Yw4" secondAttribute="height" multiplier="3:2" id="vzc-jg-mgg"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="uPB-bR-D2B" firstAttribute="leading" secondItem="hTR-qY-sno" secondAttribute="leading" id="AxN-eB-SnB"/>
-                                        <constraint firstItem="uPB-bR-D2B" firstAttribute="top" secondItem="Ykd-By-Yw4" secondAttribute="bottom" constant="8" id="G6Z-A1-LuD"/>
+                                        <constraint firstItem="uPB-bR-D2B" firstAttribute="top" secondItem="Ykd-By-Yw4" secondAttribute="bottom" constant="8" id="EKO-Ou-jel"/>
                                         <constraint firstAttribute="trailing" secondItem="uPB-bR-D2B" secondAttribute="trailing" id="Grw-01-P18"/>
                                         <constraint firstAttribute="trailing" secondItem="Ykd-By-Yw4" secondAttribute="trailing" id="HAp-fd-J55"/>
-                                        <constraint firstItem="Ykd-By-Yw4" firstAttribute="top" secondItem="hTR-qY-sno" secondAttribute="top" constant="48" id="Md9-lC-tHl"/>
                                         <constraint firstItem="A4Z-Jc-slz" firstAttribute="top" secondItem="hTR-qY-sno" secondAttribute="top" constant="11" id="VZg-If-KOT"/>
                                         <constraint firstItem="A4Z-Jc-slz" firstAttribute="leading" secondItem="hTR-qY-sno" secondAttribute="leading" constant="15" id="jXM-Gh-yAV"/>
                                         <constraint firstAttribute="trailing" secondItem="A4Z-Jc-slz" secondAttribute="trailing" constant="15" id="sBt-vb-MiK"/>
+                                        <constraint firstItem="Ykd-By-Yw4" firstAttribute="top" secondItem="A4Z-Jc-slz" secondAttribute="bottom" constant="16" id="seI-qC-38X"/>
                                         <constraint firstItem="Ykd-By-Yw4" firstAttribute="leading" secondItem="hTR-qY-sno" secondAttribute="leading" id="t3y-Zk-JLB"/>
                                         <constraint firstAttribute="bottom" secondItem="uPB-bR-D2B" secondAttribute="bottom" id="zJR-jd-bbe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="NewsComments" destination="1Ua-2h-5E1" id="9gb-bY-2FY"/>
-                                    <outlet property="NewsImage" destination="Ykd-By-Yw4" id="FuD-tN-OPt"/>
-                                    <outlet property="NewsLike" destination="bgD-WQ-cyU" id="1Wm-5M-k7h"/>
-                                    <outlet property="NewsRepost" destination="6Ap-Xh-quy" id="59d-Kn-Pxv"/>
-                                    <outlet property="NewsTitle" destination="A4Z-Jc-slz" id="vDn-Rh-2nO"/>
-                                    <outlet property="NewsView" destination="IZn-CR-UBB" id="Bo1-MO-K7U"/>
+                                    <outlet property="newsComments" destination="1Ua-2h-5E1" id="n9U-Jv-kWR"/>
+                                    <outlet property="newsImage" destination="Ykd-By-Yw4" id="40a-dh-2Fb"/>
+                                    <outlet property="newsLike" destination="bgD-WQ-cyU" id="WHI-FO-hBA"/>
+                                    <outlet property="newsRepost" destination="6Ap-Xh-quy" id="0dH-jM-z3f"/>
+                                    <outlet property="newsTitle" destination="A4Z-Jc-slz" id="7gG-SW-410"/>
+                                    <outlet property="newsViews" destination="IZn-CR-UBB" id="VTX-Wm-XJw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

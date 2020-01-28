@@ -33,17 +33,18 @@ class NewsList: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let title = news[indexPath.row].attachments.first?.link.title
-        let photo = URL(string: news[indexPath.row].attachments.first?.link.photo.photo130 ?? "")
+        let title = news[indexPath.row].text
+        let link = news[indexPath.row].attachments?.first?.link?.photo?.photo130 ?? "https://sun1-24.userapi.com/UGWcXKo0ob95KbL8YSioQ30xwFxawPUzLqIRQg/ow7STC5TvWk.jpg"
+        let photo = URL(string: link)
         
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTemplate", for: indexPath) as? NewsCell else {
             return UITableViewCell()
         }
         
-        cell.NewsTitle.text = title
+        cell.newsTitle.text = title
         if let data = try? Data(contentsOf: photo!) {
-            cell.NewsImage.image = UIImage(data: data)
+            cell.newsImage.image = UIImage(data: data)
         }
         return cell
     }
