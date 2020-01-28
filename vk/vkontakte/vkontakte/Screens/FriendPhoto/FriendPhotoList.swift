@@ -39,10 +39,6 @@ class FriendPhotoList: UICollectionViewController {
  
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendPhotoCell
-
-        
-
-        
         let url = URL(string: photoCollection[indexPath.row].sizes.first(where: { $0.type == .m })!.url)
         if let data = try? Data(contentsOf: url!) {
             cell.photo.image = UIImage(data: data)
@@ -52,18 +48,26 @@ class FriendPhotoList: UICollectionViewController {
     }
     
     lazy var photos: [INSPhotoViewable] = {
-        return [
-            INSPhoto(imageURL: URL(string: "https://inspace.io/assets/portfolio/thumb/13-3f15416ddd11d38619289335fafd498d.jpg"), thumbnailImage: UIImage(named: "thumbnailImage")!),
-            INSPhoto(imageURL: URL(string: "https://inspace.io/assets/portfolio/thumb/13-3f15416ddd11d38619289335fafd498d.jpg"), thumbnailImage: UIImage(named: "thumbnailImage")!),
-            INSPhoto(image: UIImage(named: "fullSizeImage")!, thumbnailImage: UIImage(named: "thumbnailImage")!),
-        ]
+        var photoArray = [INSPhoto]()
+        photoCollection.forEach { (item) in
+            if let imageURL = item.sizes.first(where: { $0.type == .y }) {
+                if let thumbnailImageURL = item.sizes.first(where: { $0.type == .x }) {
+                    photoArray.append(
+                        INSPhoto(
+                            imageURL: URL(string: imageURL.url),
+                            thumbnailImageURL: URL(string: thumbnailImageURL.url)
+                        )
+                    )
+                }
+            }
+        }
+        return photoArray
     }()
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! FriendPhotoCell
         let currentPhoto = photos[indexPath.row]
-        
-        print(currentPhoto)
+
         let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
 
         galleryPreview.referenceViewForPhotoWhenDismissingHandler = { [weak self] photo in

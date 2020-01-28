@@ -10,8 +10,4 @@ import UIKit
 
 class FriendCell: UITableViewCell {
     @IBOutlet weak var userName: UILabel!
-    var lastName: String?
-    var firstName: String?
-    var id: Int?
-    
 }

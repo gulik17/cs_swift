@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupList: UITableViewController {
     @IBOutlet weak var groupsSearchBar: UISearchBar!
@@ -23,6 +24,18 @@ class GroupList: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let myGroup = GroupRealm()
+        myGroup.id = 1
+        myGroup.name = "Gulik"
+        myGroup.screenName = "Владимир"
+        print("name of Group: \(myGroup.name)")
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(myGroup)
+        }
+        
         let api = VKApi()
         api.getGroupList(token: Session.shared.token) { (data: Swift.Result<[Group], Error>) in
             switch data {

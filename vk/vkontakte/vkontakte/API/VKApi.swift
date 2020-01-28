@@ -33,8 +33,6 @@ class VKApi {
     
     func getFriendPhotoList(token: String, ownerId: Int, completion: @escaping (Swift.Result<[Photo], Error>) -> Void) {
         let request = vkURL + "photos.getAll"
-
-        print(ownerId)
         
         let params: [String: Any] = [
             "access_token": token,

@@ -7,22 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendList: UITableViewController {
     @IBOutlet weak var friendsSearchBar: UISearchBar!
-    
+
     struct Section<T> {
         var title: String
         var items: [T]
     }
-    
+
     var friendSection = [Section<Friend>]()
     var friendSectionTitles = [String]()
-    
+
     var friends = [Friend]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let api = VKApi()
         api.getFriendList(token: Session.shared.token) { (data: Swift.Result<[Friend], Error>) in
             switch data {
@@ -42,18 +44,18 @@ class FriendList: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return friendSection.count
     }
-    
+
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         //view.tintColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.8)
-        view.tintColor = UIColor.white
+        view.tintColor = UIColor.systemBackground
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.label
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendSection[section].items.count
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return friendSection[section].title
     }
@@ -62,17 +64,14 @@ class FriendList: UITableViewController {
         let friendItem = friendSection[indexPath.section].items[indexPath.row]
         let firstName = friendItem.firstName
         let lastName = friendItem.lastName
-        
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTemplate", for: indexPath) as? FriendCell else {
             return UITableViewCell()
         }
-        cell.id = friendItem.id
-        cell.firstName = friendItem.firstName
-        cell.lastName = friendItem.lastName
         cell.userName.text = lastName + " " + firstName
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = friendSection[indexPath.section].items[indexPath.row].id
         let firstName = friendSection[indexPath.section].items[indexPath.row].firstName
@@ -83,11 +82,12 @@ class FriendList: UITableViewController {
         vc.userId = id
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return friendSectionTitles
     }
 }
+
 extension FriendList: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let friendDictionary = Dictionary.init(grouping: friends.filter { (friend) -> Bool in
@@ -101,7 +101,7 @@ extension FriendList: UISearchBarDelegate {
         friendSection.sort { $0.title < $1.title }
         tableView.reloadData()
     }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
