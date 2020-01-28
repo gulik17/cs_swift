@@ -25,6 +25,7 @@
 		C33D679923ABED95001FA624 /* loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33D679823ABED95001FA624 /* loader.xib */; };
 		C33D679B23ABF099001FA624 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D679A23ABF099001FA624 /* RoundView.swift */; };
 		C33D679D23ABF66B001FA624 /* loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D679C23ABF66B001FA624 /* loader.swift */; };
+		C362BBB523E0A86A004AEF97 /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C362BBB423E0A86A004AEF97 /* NewsRequest.swift */; };
 		C3732FB023AAB0BE00579F04 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3732FAF23AAB0BE00579F04 /* NewsCell.swift */; };
 		C37BEC4F239A3F6900C4880D /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37BEC4E239A3F6900C4880D /* LikeButton.swift */; };
 		C39048E523D9784300800D8C /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39048E423D9784300800D8C /* VKApi.swift */; };
@@ -78,6 +79,7 @@
 		C33D679823ABED95001FA624 /* loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loader.xib; sourceTree = "<group>"; };
 		C33D679A23ABF099001FA624 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		C33D679C23ABF66B001FA624 /* loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loader.swift; sourceTree = "<group>"; };
+		C362BBB423E0A86A004AEF97 /* NewsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequest.swift; sourceTree = "<group>"; };
 		C3732FAF23AAB0BE00579F04 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		C37BEC4E239A3F6900C4880D /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		C39048E423D9784300800D8C /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				C3EFC58F23D9A4E400870BC6 /* FriendRequest.swift */,
 				C3EFC58B23D996A500870BC6 /* PhotoRequest.swift */,
 				C3152CED23DEC393001DB086 /* CommonResponse.swift */,
+				C362BBB423E0A86A004AEF97 /* NewsRequest.swift */,
 			);
 			path = VKRequest;
 			sourceTree = "<group>";
@@ -252,8 +255,8 @@
 		C3EFC58A23D9926F00870BC6 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				C3D0A66023AAAA2400C916EE /* NewsList.swift */,
 				C3732FAF23AAB0BE00579F04 /* NewsCell.swift */,
+				C3D0A66023AAAA2400C916EE /* NewsList.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				C313694A239647D4000E0230 /* FriendCell.swift in Sources */,
 				C3A6469A23E09E2700E6E6EA /* FriendRealm.swift in Sources */,
 				C3EFC58C23D996A500870BC6 /* PhotoRequest.swift in Sources */,
+				C362BBB523E0A86A004AEF97 /* NewsRequest.swift in Sources */,
 				C323B036239998000099B2AC /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

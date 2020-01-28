@@ -43,6 +43,19 @@ class VKApi {
         getData(requestURL: request, parameters: params) { completion($0) }
     }
     
+    func getNewsList(token: String, completion: @escaping (Swift.Result<[News], Error>) -> Void) {
+        let request = vkURL + "newsfeed.get"
+
+        let params: [String: Any] = [
+            "access_token": token,
+            "filters": "post",
+            "count": "5",
+            "v": "5.103"
+        ]
+
+        getData(requestURL: request, parameters: params) { completion($0) }
+    }
+    
     func getGroupList(token: String, completion: @escaping (Swift.Result<[Group], Error>) -> Void) {
         let request = vkURL + "groups.get"
 

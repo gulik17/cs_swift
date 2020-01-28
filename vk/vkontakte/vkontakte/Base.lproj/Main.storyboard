@@ -259,6 +259,14 @@
                                         <constraint firstAttribute="bottom" secondItem="uPB-bR-D2B" secondAttribute="bottom" id="zJR-jd-bbe"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="NewsComments" destination="1Ua-2h-5E1" id="9gb-bY-2FY"/>
+                                    <outlet property="NewsImage" destination="Ykd-By-Yw4" id="FuD-tN-OPt"/>
+                                    <outlet property="NewsLike" destination="bgD-WQ-cyU" id="1Wm-5M-k7h"/>
+                                    <outlet property="NewsRepost" destination="6Ap-Xh-quy" id="59d-Kn-Pxv"/>
+                                    <outlet property="NewsTitle" destination="A4Z-Jc-slz" id="vDn-Rh-2nO"/>
+                                    <outlet property="NewsView" destination="IZn-CR-UBB" id="Bo1-MO-K7U"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
