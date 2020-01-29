@@ -17,6 +17,10 @@ struct News: Decodable {
     var text: String
     var markedAsAds: Int?
     var attachments: [Attachment]?
+    var comments: Comments
+    var likes: Likes
+    var reposts: Reposts
+    var views: Views
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -27,6 +31,10 @@ struct News: Decodable {
         case text
         case markedAsAds = "marked_as_ads"
         case attachments
+        case comments
+        case likes
+        case reposts
+        case views
     }
 }
 
@@ -67,4 +75,42 @@ struct NewsPhoto: Codable {
         case text
         case date
     }
+}
+
+struct Comments: Codable {
+    var count: Int
+    var canPost: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case count
+        case canPost = "can_post"
+    }
+}
+
+struct Likes: Codable {
+    var count: Int
+    var userLikes: Int
+    var canLike: Int
+    var canPublish: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case count
+        case userLikes = "user_likes"
+        case canLike = "can_like"
+        case canPublish = "can_publish"
+    }
+}
+
+struct Reposts: Codable {
+    var count: Int
+    var userReposted: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case count
+        case userReposted = "user_reposted"
+    }
+}
+
+struct Views: Codable {
+    var count: Int
 }

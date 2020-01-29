@@ -34,7 +34,11 @@ class NewsList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let title = news[indexPath.row].text
-        let link = news[indexPath.row].attachments?.first?.link?.photo?.photo130 ?? "https://sun1-24.userapi.com/UGWcXKo0ob95KbL8YSioQ30xwFxawPUzLqIRQg/ow7STC5TvWk.jpg"
+        let comments = String(news[indexPath.row].comments.count)
+        let likes = String(news[indexPath.row].likes.count)
+        let reposts = String(news[indexPath.row].reposts.count)
+        let views = String(news[indexPath.row].views.count)
+        let link = news[indexPath.row].attachments?.first?.link?.photo?.photo604 ?? "https://sun9-63.userapi.com/c627628/v627628412/3aa85/EwORTurDS_k.jpg"
         let photo = URL(string: link)
         
         
@@ -43,6 +47,11 @@ class NewsList: UITableViewController {
         }
         
         cell.newsTitle.text = title
+        cell.newsLike.setTitle(likes, for: .normal)
+        cell.newsComments.setTitle(comments, for: .normal)
+        cell.newsRepost.setTitle(reposts, for: .normal)
+        cell.newsViews.setTitle(views, for: .normal)
+        
         if let data = try? Data(contentsOf: photo!) {
             cell.newsImage.image = UIImage(data: data)
         }
