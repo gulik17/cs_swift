@@ -50,7 +50,7 @@ class LoginController: UIViewController {
         urlComponent.path = "/authorize"
         urlComponent.queryItems = [URLQueryItem(name: "client_id", value: VKSecret),
                                    URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-                                   URLQueryItem(name: "scope", value: "wall,friends"),
+                                   URLQueryItem(name: "scope", value: "wall,friends,photos,groups"),
                                    URLQueryItem(name: "response_type", value: "token"),
                                    URLQueryItem(name: "v", value: "5.103"),]
         let request = URLRequest(url: urlComponent.url!)

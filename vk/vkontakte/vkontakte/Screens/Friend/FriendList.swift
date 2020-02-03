@@ -64,10 +64,17 @@ class FriendList: UITableViewController {
         let friendItem = friendSection[indexPath.section].items[indexPath.row]
         let firstName = friendItem.firstName
         let lastName = friendItem.lastName
+        let image = friendItem.photo
+        let photo = URL(string: image)
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTemplate", for: indexPath) as? FriendCell else {
             return UITableViewCell()
         }
+
+        if let data = try? Data(contentsOf: photo!) {
+            cell.userPhoto.image = UIImage(data: data)
+        }
+        
         cell.userName.text = lastName + " " + firstName
         return cell
     }

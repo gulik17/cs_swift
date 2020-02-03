@@ -354,7 +354,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="userName" destination="7O2-Nj-b2r" id="Qwi-1u-8jg"/>
+                                    <outlet property="userName" destination="7O2-Nj-b2r" id="Wuf-lE-iTK"/>
+                                    <outlet property="userPhoto" destination="lHd-3G-UBy" id="0F5-nv-ngW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

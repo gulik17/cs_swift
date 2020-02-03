@@ -24,7 +24,7 @@ class VKApi {
         let params: [String: Any] = [
             "access_token": token,
             "order": "name",
-            "fields": "city,domain",
+            "fields": "photo_50",
             "v": "5.103"
         ]
 
