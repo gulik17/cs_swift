@@ -55,9 +55,7 @@ struct NewsPhoto: Codable {
     var id: Int
     var albumId: Int
     var ownerId: Int
-    var photo75: String
-    var photo130: String
-    var photo604: String
+    var sizes: Size
     var width: Int
     var height: Int
     var text: String
@@ -67,9 +65,7 @@ struct NewsPhoto: Codable {
         case id
         case albumId = "album_id"
         case ownerId = "owner_id"
-        case photo75 = "photo_75"
-        case photo130 = "photo_130"
-        case photo604 = "photo_604"
+        case sizes
         case width
         case height
         case text

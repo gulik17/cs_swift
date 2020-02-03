@@ -14,7 +14,7 @@ protocol FriendSource {
     func searchFriends(firstName: String) throws -> Results<FriendRealm>
 }
 
-class FriendsRepository: FriendSource {
+class FriendRepository: FriendSource {
 
     // Получим всех пользователей из Realm
     func getAllUsers() throws -> Results<FriendRealm> {

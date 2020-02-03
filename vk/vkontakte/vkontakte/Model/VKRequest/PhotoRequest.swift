@@ -13,12 +13,14 @@ struct Photo: Decodable {
     var albumId: Int
     var ownerId: Int
     var sizes: [Size]
+    var likes: Like
     
     enum CodingKeys: String, CodingKey {
         case id
         case albumId = "album_id"
         case ownerId = "owner_id"
         case sizes
+        case likes
     }
 }
 
@@ -39,5 +41,23 @@ struct Size: Codable {
         case y = "y" //y — пропорциональная копия изображения с максимальной стороной 807px;
         case z = "z" //z — пропорциональная копия изображения с максимальным размером 1080x1024;
         case w = "w" //w — пропорциональная копия изображения с максимальным размером 2560x2048px.
+    }
+}
+
+
+struct Like: Decodable {
+    var isLiked: Int
+    var count: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case isLiked = "user_likes"
+        case count
+    }
+    
+    func toRealm() -> LikeRealm {
+        let likeRealm = LikeRealm()
+        likeRealm.count = count
+        likeRealm.isLiked = isLiked
+        return likeRealm
     }
 }
