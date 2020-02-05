@@ -18,6 +18,10 @@ class GroupRepository {
         }
     }
 
+    //lazy var realm:Realm = {
+     //   return try! Realm()
+    //}()
+
     func addGroups(groups: [Group]) {
         do {
             let realm = try! Realm()
@@ -49,7 +53,7 @@ class GroupRepository {
     func searchGroups(name: String) throws -> Results<GroupRealm> {
         do {
             let realm = try Realm()
-            return realm.objects(GroupRealm.self).filter("name CONTAINS[c] %@", name)
+            return realm.objects(GroupRealm.self).filter("name CONTAINS[cd] %@", name)
         } catch {
             throw error
         }
