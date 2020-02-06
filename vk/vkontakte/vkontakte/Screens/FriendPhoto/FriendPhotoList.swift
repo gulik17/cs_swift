@@ -8,6 +8,7 @@
 
 import UIKit
 import INSPhotoGallery
+import Kingfisher
 
 private let reuseIdentifier = "FriendPhotoCell"
 
@@ -40,20 +41,23 @@ class FriendPhotoList: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendPhotoCell
         let url = URL(string: photoCollection[indexPath.row].sizes.first(where: { $0.type == .m })!.url)
-        if let data = try? Data(contentsOf: url!) {
-            cell.photo.image = UIImage(data: data)
-        }
+        //if let data = try? Data(contentsOf: url!) {
+        //    cell.photo.image = UIImage(data: data)
+        //}
+        
+        cell.photo.kf.indicatorType = .activity
+        cell.photo.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
         
         return cell
     }
     
     lazy var photos: [INSPhotoViewable] = {
-        var photoArray = [INSPhoto]()
+        var photoArray = [CustomPhotoModel]()
         photoCollection.forEach { (item) in
             if let imageURL = item.sizes.first(where: { $0.type == .y }) {
                 if let thumbnailImageURL = item.sizes.first(where: { $0.type == .x }) {
                     photoArray.append(
-                        INSPhoto(
+                        CustomPhotoModel(
                             imageURL: URL(string: imageURL.url),
                             thumbnailImageURL: URL(string: thumbnailImageURL.url)
                         )

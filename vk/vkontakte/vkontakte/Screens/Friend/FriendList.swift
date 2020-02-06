@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Kingfisher
 
 class FriendList: UITableViewController {
     @IBOutlet weak var friendsSearchBar: UISearchBar!
@@ -64,16 +65,14 @@ class FriendList: UITableViewController {
         let friendItem = friendSection[indexPath.section].items[indexPath.row]
         let firstName = friendItem.firstName
         let lastName = friendItem.lastName
-        let image = friendItem.photo
-        let photo = URL(string: image)
+        let imageURL = URL(string: friendItem.photo)
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTemplate", for: indexPath) as? FriendCell else {
             return UITableViewCell()
         }
 
-        if let data = try? Data(contentsOf: photo!) {
-            cell.userPhoto.image = UIImage(data: data)
-        }
+        cell.userPhoto.kf.indicatorType = .activity
+        cell.userPhoto.kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
         
         cell.userName.text = lastName + " " + firstName
         return cell

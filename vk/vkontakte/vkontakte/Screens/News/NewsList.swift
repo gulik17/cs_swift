@@ -40,8 +40,7 @@ class NewsList: UITableViewController {
         let views = String(news[indexPath.row].views.count)
         let link = news[indexPath.row].attachments?.first?.link?.photo?.sizes.url ?? "https://sun9-63.userapi.com/c627628/v627628412/3aa85/EwORTurDS_k.jpg"
         let photo = URL(string: link)
-        
-        
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTemplate", for: indexPath) as? NewsCell else {
             return UITableViewCell()
         }
@@ -52,9 +51,9 @@ class NewsList: UITableViewController {
         cell.newsRepost.setTitle(reposts, for: .normal)
         cell.newsViews.setTitle(views, for: .normal)
         
-        if let data = try? Data(contentsOf: photo!) {
-            cell.newsImage.image = UIImage(data: data)
-        }
+        cell.newsImage.kf.indicatorType = .activity
+        cell.newsImage.kf.setImage(with: photo, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        
         return cell
     }
 
