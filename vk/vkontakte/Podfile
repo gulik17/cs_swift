@@ -6,4 +6,5 @@ target 'vkontakte' do
   pod 'INSPhotoGallery'
   pod 'Alamofire'
   pod 'RealmSwift'
+  pod 'Kingfisher'
 end
