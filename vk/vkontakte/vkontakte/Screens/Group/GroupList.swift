@@ -22,8 +22,6 @@ class GroupList: UITableViewController {
     
     var groupResult: Results<GroupRealm>?
     var token: NotificationToken?
-    
-   // var groups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +48,13 @@ class GroupList: UITableViewController {
         }*/
     }
     
+    deinit {
+        token?.invalidate()
+    }
+    
     @objc func refresh() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.tableView.reloadData()
+            self.loadGroups()
             self.groupRefreshControl.endRefreshing()
         }
     }
@@ -102,9 +104,9 @@ class GroupList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // MARK: TODO: Необходимо реализовать функцию удаления записи в БД Realm
-            //groupResult?.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            groupDB.removeGroup(groupId: groupResult?[indexPath.row].id)
+            loadGroups()
+            //tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }

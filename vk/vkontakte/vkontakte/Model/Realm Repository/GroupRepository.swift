@@ -17,6 +17,24 @@ class GroupRepository {
             throw error
         }
     }
+    
+    func removeGroup(groupId: Int?) {
+        do {
+            let realm = try! Realm()
+            guard let id = groupId else {
+                return
+            }
+            let object = realm.objects(GroupRealm.self).filter("id = %@", id).first
+            try! realm.write {
+                if let obj = object {
+                    realm.delete(obj)
+                }
+            }
+        } catch let error as NSError {
+            // handle error
+            print("error - \(error.localizedDescription)")
+        }
+    }
 
     //lazy var realm:Realm = {
      //   return try! Realm()
