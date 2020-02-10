@@ -7,4 +7,9 @@ target 'vkontakte' do
   pod 'Alamofire'
   pod 'RealmSwift'
   pod 'Kingfisher'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.14.0'
 end
