@@ -22,6 +22,7 @@
 		C3136959239683F2000E0230 /* AllGroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3136958239683F2000E0230 /* AllGroupList.swift */; };
 		C3152CEE23DEC393001DB086 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3152CED23DEC393001DB086 /* CommonResponse.swift */; };
 		C323B036239998000099B2AC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323B035239998000099B2AC /* CustomImageView.swift */; };
+		C331ECE723F52BFC009CE1CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C331ECE623F52BFC009CE1CD /* GoogleService-Info.plist */; };
 		C33D679923ABED95001FA624 /* loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33D679823ABED95001FA624 /* loader.xib */; };
 		C33D679B23ABF099001FA624 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D679A23ABF099001FA624 /* RoundView.swift */; };
 		C33D679D23ABF66B001FA624 /* loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D679C23ABF66B001FA624 /* loader.swift */; };
@@ -80,6 +81,7 @@
 		C3136958239683F2000E0230 /* AllGroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupList.swift; sourceTree = "<group>"; };
 		C3152CED23DEC393001DB086 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
 		C323B035239998000099B2AC /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		C331ECE623F52BFC009CE1CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C33D679823ABED95001FA624 /* loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loader.xib; sourceTree = "<group>"; };
 		C33D679A23ABF099001FA624 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		C33D679C23ABF66B001FA624 /* loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loader.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				C31284BA2389230000CD0810 /* Assets.xcassets */,
 				C31284BC2389230000CD0810 /* LaunchScreen.storyboard */,
 				C31284BF2389230000CD0810 /* Info.plist */,
+				C331ECE623F52BFC009CE1CD /* GoogleService-Info.plist */,
 			);
 			path = vkontakte;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				C31284BE2389230000CD0810 /* LaunchScreen.storyboard in Resources */,
 				C31284BB2389230000CD0810 /* Assets.xcassets in Resources */,
+				C331ECE723F52BFC009CE1CD /* GoogleService-Info.plist in Resources */,
 				C33D679923ABED95001FA624 /* loader.xib in Resources */,
 				C31284B9238922FA00CD0810 /* Main.storyboard in Resources */,
 			);
