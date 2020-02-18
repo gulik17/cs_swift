@@ -38,7 +38,7 @@ class NewsList: UITableViewController {
         let likes = String(news[indexPath.row].likes.count)
         let reposts = String(news[indexPath.row].reposts.count)
         let views = String(news[indexPath.row].views.count)
-        let link = news[indexPath.row].attachments?.first?.link?.photo?.sizes.url ?? "https://sun9-63.userapi.com/c627628/v627628412/3aa85/EwORTurDS_k.jpg"
+        let link = news[indexPath.row].attachments?.first?.photo!.sizes.last?.url ?? "https://sun9-63.userapi.com/c627628/v627628412/3aa85/EwORTurDS_k.jpg"
         let photo = URL(string: link)
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTemplate", for: indexPath) as? NewsCell else {

@@ -30,15 +30,8 @@ class GroupRepository {
                     realm.delete(obj)
                 }
             }
-        } catch let error as NSError {
-            // handle error
-            print("error - \(error.localizedDescription)")
         }
     }
-
-    //lazy var realm:Realm = {
-     //   return try! Realm()
-    //}()
 
     func addGroups(groups: [Group]) {
         do {

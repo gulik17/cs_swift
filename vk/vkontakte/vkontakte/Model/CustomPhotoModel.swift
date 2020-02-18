@@ -44,9 +44,11 @@ class CustomPhotoModel: NSObject, INSPhotoViewable {
     
     func loadImageWithCompletionHandler(_ completion: @escaping (_ image: UIImage?, _ error: Error?) -> ()) {
         if let url = imageURL {
-            
-            KingfisherManager.shared.retrieveImage(with: ImageResource(downloadURL: url), options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
-                completion(image, error)
+            KingfisherManager.shared.retrieveImage(with: ImageResource(downloadURL: url), options: nil, progressBlock: nil, completionHandler: { result in
+                switch result {
+                    case .success(let value): completion(value.image, nil)
+                    case .failure(let error): completion(nil, error as NSError)
+                }
             })
         } else {
             completion(nil, NSError(domain: "PhotoDomain", code: -1, userInfo: [ NSLocalizedDescriptionKey: "Couldn't load image"]))
@@ -58,8 +60,11 @@ class CustomPhotoModel: NSObject, INSPhotoViewable {
             return
         }
         if let url = thumbnailImageURL {
-            KingfisherManager.shared.retrieveImage(with: ImageResource(downloadURL: url), options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
-                completion(image, error)
+            KingfisherManager.shared.retrieveImage(with: ImageResource(downloadURL: url), options: nil, progressBlock: nil, completionHandler: { result in
+                switch result {
+                    case .success(let value): completion(value.image, nil)
+                    case .failure(let error): completion(nil, error as NSError)
+                }
             })
         } else {
             completion(nil, NSError(domain: "PhotoDomain", code: -1, userInfo: [ NSLocalizedDescriptionKey: "Couldn't load image"]))
