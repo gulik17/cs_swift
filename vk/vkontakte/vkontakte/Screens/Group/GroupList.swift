@@ -33,19 +33,6 @@ class GroupList: UITableViewController {
         groupsSearchBar.delegate = self
         loadGroups()
         loadAPIData()
-        
-        /*api.getGroupList(token: Session.shared.token) { (data: Swift.Result<[Group], Error>) in
-            switch data {
-            case .failure(let error):
-                print(error)
-            case .success(let resData):
-                self.groups = resData
-                let groupedDictionary = Dictionary(grouping: self.groups, by: {$0.name.prefix(1)})
-                self.groupSection = groupedDictionary.map{ Section(title: String($0.key), items: $0.value) }
-                self.groupSection.sort { $0.title < $1.title }
-                self.tableView.reloadData()
-            }
-        }*/
     }
     
     deinit {
@@ -125,7 +112,6 @@ extension GroupList: UISearchBarDelegate {
         view.endEditing(true)
     }
 }
-
 
 extension GroupList: GroupsListView {
     func updateTable() {

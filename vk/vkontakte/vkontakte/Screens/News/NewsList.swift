@@ -50,10 +50,8 @@ class NewsList: UITableViewController {
         cell.newsComments.setTitle(comments, for: .normal)
         cell.newsRepost.setTitle(reposts, for: .normal)
         cell.newsViews.setTitle(views, for: .normal)
-        
         cell.newsImage.kf.indicatorType = .activity
         cell.newsImage.kf.setImage(with: photo, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-        
         return cell
     }
 

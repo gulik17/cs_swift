@@ -41,13 +41,8 @@ class FriendPhotoList: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendPhotoCell
         let url = URL(string: photoCollection[indexPath.row].sizes.first(where: { $0.type == .m })!.url)
-        //if let data = try? Data(contentsOf: url!) {
-        //    cell.photo.image = UIImage(data: data)
-        //}
-        
         cell.photo.kf.indicatorType = .activity
         cell.photo.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-        
         return cell
     }
     
