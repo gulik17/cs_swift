@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - News
 struct News: Decodable {
-    let type: String
+    let type: String?
     let sourceID, date: Int
     let postType, text: String
     let markedAsAds: Int
@@ -40,7 +40,7 @@ struct News: Decodable {
 
 // MARK: - Attachment
 struct Attachment: Decodable {
-    let type: AttachmentType
+    let type: AttachmentType?
     let photo: AttPhoto?
     let video: Video?
 }
@@ -84,6 +84,7 @@ enum SizeType: String, Decodable {
     case q = "q"
     case r = "r"
     case s = "s"
+    case w = "w"
     case x = "x"
     case y = "y"
     case z = "z"
@@ -106,8 +107,9 @@ struct Video: Decodable {
     let title: String
     let isFavorite: Int
     let trackCode: String
-    let type: String
-    let views, localViews: Int
+    let type: String?
+    let views: Int?
+    let localViews: Int
     let platform: String
 
     enum CodingKeys: String, CodingKey {
@@ -158,7 +160,7 @@ struct Likes: Decodable {
 
 // MARK: - PostSource
 struct PostSource: Decodable {
-    let type: String
+    let type: String?
 }
 
 // MARK: - Reposts

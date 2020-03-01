@@ -87,9 +87,9 @@ class VKApi {
                           parameters: parameters)
             .responseData{ (result) in
                 guard let data = result.value else { return }
-                //let output = String(data: data, encoding: String.Encoding.utf8)
-                //print(output! as Any)
-                //let response = try! JSONDecoder().decode(CommonResponse<T>.self, from: data)
+                let output = String(data: data, encoding: String.Encoding.utf8)
+                print(output! as Any)
+                let response = try! JSONDecoder().decode(CommonResponse<T>.self, from: data)
                 do {
                     let result = try JSONDecoder().decode(CommonResponse<T>.self, from: data)
                     completion(.success(result.response.items))
