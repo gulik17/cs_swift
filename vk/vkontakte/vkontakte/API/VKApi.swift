@@ -43,20 +43,20 @@ class VKApi {
 
         getData(requestURL: request, parameters: params) { completion($0) }
     }
-    
+
     func getNewsList(token: String, completion: @escaping (Swift.Result<[News], Error>) -> Void) {
         let request = vkURL + "newsfeed.get"
 
         let params: [String: Any] = [
             "access_token": token,
             "filters": "post",
-            "count": 5,
+            "count": 10,
             "v": "5.103"
         ]
 
         getData(requestURL: request, parameters: params) { completion($0) }
     }
-    
+
     func getGroupList(token: String, completion: @escaping (Swift.Result<[Group], Error>) -> Void) {
         let request = vkURL + "groups.get"
 
@@ -87,9 +87,9 @@ class VKApi {
                           parameters: parameters)
             .responseData{ (result) in
                 guard let data = result.value else { return }
-                let output = String(data: data, encoding: String.Encoding.utf8)
-                print(output! as Any)
-                let response = try! JSONDecoder().decode(CommonResponse<T>.self, from: data)
+                //let output = String(data: data, encoding: String.Encoding.utf8)
+                //print(output! as Any)
+                //let response = try! JSONDecoder().decode(CommonResponse<T>.self, from: data)
                 do {
                     let result = try JSONDecoder().decode(CommonResponse<T>.self, from: data)
                     completion(.success(result.response.items))

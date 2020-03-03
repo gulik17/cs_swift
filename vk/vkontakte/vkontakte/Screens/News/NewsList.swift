@@ -38,20 +38,22 @@ class NewsList: UITableViewController {
         let likes = String(news[indexPath.row].likes.count)
         let reposts = String(news[indexPath.row].reposts.count)
         let views = String(news[indexPath.row].views.count)
-        let link = news[indexPath.row].attachments?.first?.photo!.sizes.last?.url ?? "https://sun9-63.userapi.com/c627628/v627628412/3aa85/EwORTurDS_k.jpg"
-        let photo = URL(string: link)
-
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTemplate", for: indexPath) as? NewsCell else {
             return UITableViewCell()
         }
-        
+        cell.newsImage.kf.indicatorType = .activity
+        if let link = news[indexPath.row].attachments?.first?.photo!.sizes.last?.url {
+            cell.newsImage.kf.setImage(with: URL(string: link), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        } else {
+            cell.newsImage.image = UIImage(contentsOfFile: "not_found")
+        }
+
         cell.newsTitle.text = title
         cell.newsLike.setTitle(likes, for: .normal)
         cell.newsComments.setTitle(comments, for: .normal)
         cell.newsRepost.setTitle(reposts, for: .normal)
         cell.newsViews.setTitle(views, for: .normal)
-        cell.newsImage.kf.indicatorType = .activity
-        cell.newsImage.kf.setImage(with: photo, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        
         return cell
     }
 

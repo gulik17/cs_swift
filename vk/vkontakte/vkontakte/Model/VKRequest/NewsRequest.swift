@@ -42,12 +42,13 @@ struct News: Decodable {
 struct Attachment: Decodable {
     let type: AttachmentType?
     let photo: AttPhoto?
-    let video: Video?
+    //let video: AttVideo?
 }
 
 // MARK: - Photo
 struct AttPhoto: Decodable {
-    let id, albumID, ownerID, userID: Int
+    let id, albumID, ownerID: Int
+    let userID: Int?
     let sizes: [AttSize]
     let text: String
     let date: Int
@@ -96,7 +97,7 @@ enum AttachmentType: String, Decodable {
 }
 
 // MARK: - Video
-struct Video: Decodable {
+struct AttVideo: Decodable {
     let accessKey: String
     let canComment, canLike, canRepost, canSubscribe: Int
     let canAddToFaves, canAdd, comments, date: Int
