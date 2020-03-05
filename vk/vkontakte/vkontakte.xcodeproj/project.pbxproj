@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C31284B2238922FA00CD0810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31284B1238922FA00CD0810 /* AppDelegate.swift */; };
+		C31284B4238922FA00CD0810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31284B3238922FA00CD0810 /* SceneDelegate.swift */; };
+		C31284B6238922FA00CD0810 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31284B5238922FA00CD0810 /* LoginController.swift */; };
+		C31284B9238922FA00CD0810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31284B7238922FA00CD0810 /* Main.storyboard */; };
+		C31284BB2389230000CD0810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31284BA2389230000CD0810 /* Assets.xcassets */; };
+		C31284BE2389230000CD0810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31284BC2389230000CD0810 /* LaunchScreen.storyboard */; };
+		C31369482396340A000E0230 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31369472396340A000E0230 /* FriendList.swift */; };
+		C313694A239647D4000E0230 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3136949239647D4000E0230 /* FriendCell.swift */; };
+		C313694C239653B6000E0230 /* FriendPhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313694B239653B6000E0230 /* FriendPhotoList.swift */; };
+		C313694E23965575000E0230 /* FriendPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313694D23965575000E0230 /* FriendPhotoCell.swift */; };
+		C31369552396811E000E0230 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31369542396811E000E0230 /* GroupList.swift */; };
+		C31369572396813E000E0230 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31369562396813E000E0230 /* GroupCell.swift */; };
+		C3136959239683F2000E0230 /* AllGroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3136958239683F2000E0230 /* AllGroupList.swift */; };
+		C3152CEE23DEC393001DB086 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3152CED23DEC393001DB086 /* CommonResponse.swift */; };
+		C323B036239998000099B2AC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323B035239998000099B2AC /* CustomImageView.swift */; };
+		C33D679923ABED95001FA624 /* loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33D679823ABED95001FA624 /* loader.xib */; };
+		C33D679B23ABF099001FA624 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D679A23ABF099001FA624 /* RoundView.swift */; };
+		C33D679D23ABF66B001FA624 /* loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D679C23ABF66B001FA624 /* loader.swift */; };
+		C35B9C7A23ECA8B700B1F480 /* CustomPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35B9C7923ECA8B700B1F480 /* CustomPhotoModel.swift */; };
+		C362BBB523E0A86A004AEF97 /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C362BBB423E0A86A004AEF97 /* NewsRequest.swift */; };
+		C3732FB023AAB0BE00579F04 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3732FAF23AAB0BE00579F04 /* NewsCell.swift */; };
+		C379A27F23E8228200774850 /* FriendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379A27E23E8228200774850 /* FriendRepository.swift */; };
+		C37BEC4F239A3F6900C4880D /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37BEC4E239A3F6900C4880D /* LikeButton.swift */; };
+		C38BA8BB23E89A36003EE471 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38BA8BA23E89A36003EE471 /* GroupRepository.swift */; };
+		C38BA8BD23E89ED0003EE471 /* PhotoRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38BA8BC23E89ED0003EE471 /* PhotoRealm.swift */; };
+		C39048E523D9784300800D8C /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39048E423D9784300800D8C /* VKApi.swift */; };
+		C39048E723D9798D00800D8C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39048E623D9798D00800D8C /* Extension.swift */; };
+		C3A6469823E09E0C00E6E6EA /* GroupRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A6469723E09E0C00E6E6EA /* GroupRealm.swift */; };
+		C3A6469A23E09E2700E6E6EA /* FriendRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A6469923E09E2700E6E6EA /* FriendRealm.swift */; };
+		C3A6469C23E09E5900E6E6EA /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A6469B23E09E5900E6E6EA /* UserRealm.swift */; };
+		C3B1C15823B60C3D008F024B /* INSPhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B1C15723B60C3D008F024B /* INSPhotoGallery.framework */; };
+		C3B1C15923B60C3D008F024B /* INSPhotoGallery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3B1C15723B60C3D008F024B /* INSPhotoGallery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3D0A66123AAAA2400C916EE /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D0A66023AAAA2400C916EE /* NewsList.swift */; };
+		C3EFC58C23D996A500870BC6 /* PhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC58B23D996A500870BC6 /* PhotoRequest.swift */; };
+		C3EFC58E23D99A7400870BC6 /* GroupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC58D23D99A7400870BC6 /* GroupRequest.swift */; };
+		C3EFC59023D9A4E400870BC6 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC58F23D9A4E400870BC6 /* FriendRequest.swift */; };
+		F7CE1B0D6D1DF9A84C6FE119 /* Pods_vkontakte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010C401D80C59977CA95D0A8 /* Pods_vkontakte.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3B1C15A23B60C3D008F024B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C3B1C15923B60C3D008F024B /* INSPhotoGallery.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		010C401D80C59977CA95D0A8 /* Pods_vkontakte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vkontakte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CDCD6F854BAE3741341DE07 /* Pods-vkontakte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkontakte.release.xcconfig"; path = "Target Support Files/Pods-vkontakte/Pods-vkontakte.release.xcconfig"; sourceTree = "<group>"; };
+		C31284AE238922FA00CD0810 /* vkontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31284B1238922FA00CD0810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C31284B3238922FA00CD0810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C31284B5238922FA00CD0810 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C31284B8238922FA00CD0810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C31284BA2389230000CD0810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C31284BD2389230000CD0810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C31284BF2389230000CD0810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31369472396340A000E0230 /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
+		C3136949239647D4000E0230 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		C313694B239653B6000E0230 /* FriendPhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotoList.swift; sourceTree = "<group>"; };
+		C313694D23965575000E0230 /* FriendPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotoCell.swift; sourceTree = "<group>"; };
+		C31369542396811E000E0230 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
+		C31369562396813E000E0230 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		C3136958239683F2000E0230 /* AllGroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupList.swift; sourceTree = "<group>"; };
+		C3152CED23DEC393001DB086 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
+		C323B035239998000099B2AC /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		C33D679823ABED95001FA624 /* loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loader.xib; sourceTree = "<group>"; };
+		C33D679A23ABF099001FA624 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		C33D679C23ABF66B001FA624 /* loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loader.swift; sourceTree = "<group>"; };
+		C35B9C7923ECA8B700B1F480 /* CustomPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoModel.swift; sourceTree = "<group>"; };
+		C362BBB423E0A86A004AEF97 /* NewsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequest.swift; sourceTree = "<group>"; };
+		C3732FAF23AAB0BE00579F04 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		C379A27E23E8228200774850 /* FriendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRepository.swift; sourceTree = "<group>"; };
+		C37BEC4E239A3F6900C4880D /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		C38BA8BA23E89A36003EE471 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
+		C38BA8BC23E89ED0003EE471 /* PhotoRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRealm.swift; sourceTree = "<group>"; };
+		C39048E423D9784300800D8C /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
+		C39048E623D9798D00800D8C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		C3A6469723E09E0C00E6E6EA /* GroupRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRealm.swift; sourceTree = "<group>"; };
+		C3A6469923E09E2700E6E6EA /* FriendRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRealm.swift; sourceTree = "<group>"; };
+		C3A6469B23E09E5900E6E6EA /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		C3B1C15723B60C3D008F024B /* INSPhotoGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = INSPhotoGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D0A66023AAAA2400C916EE /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		C3EFC58B23D996A500870BC6 /* PhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequest.swift; sourceTree = "<group>"; };
+		C3EFC58D23D99A7400870BC6 /* GroupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRequest.swift; sourceTree = "<group>"; };
+		C3EFC58F23D9A4E400870BC6 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
+		FE50A348E1CBDEAB7EB44F2B /* Pods-vkontakte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkontakte.debug.xcconfig"; path = "Target Support Files/Pods-vkontakte/Pods-vkontakte.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C31284AB238922FA00CD0810 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7CE1B0D6D1DF9A84C6FE119 /* Pods_vkontakte.framework in Frameworks */,
+				C3B1C15823B60C3D008F024B /* INSPhotoGallery.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3008096956245ADE6A2EBA6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE50A348E1CBDEAB7EB44F2B /* Pods-vkontakte.debug.xcconfig */,
+				4CDCD6F854BAE3741341DE07 /* Pods-vkontakte.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C31284A5238922FA00CD0810 = {
+			isa = PBXGroup;
+			children = (
+				C31284B0238922FA00CD0810 /* vkontakte */,
+				C31284AF238922FA00CD0810 /* Products */,
+				3008096956245ADE6A2EBA6E /* Pods */,
+				D26FB63E5846CF8861AFD9DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C31284AF238922FA00CD0810 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C31284AE238922FA00CD0810 /* vkontakte.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C31284B0238922FA00CD0810 /* vkontakte */ = {
+			isa = PBXGroup;
+			children = (
+				C3EFC58523D97E5700870BC6 /* Screens */,
+				C39048E323D9782700800D8C /* API */,
+				C323B034239997860099B2AC /* UI */,
+				C313694F239679B1000E0230 /* Model */,
+				C31284B1238922FA00CD0810 /* AppDelegate.swift */,
+				C31284B3238922FA00CD0810 /* SceneDelegate.swift */,
+				C31284B7238922FA00CD0810 /* Main.storyboard */,
+				C31284BA2389230000CD0810 /* Assets.xcassets */,
+				C31284BC2389230000CD0810 /* LaunchScreen.storyboard */,
+				C31284BF2389230000CD0810 /* Info.plist */,
+			);
+			path = vkontakte;
+			sourceTree = "<group>";
+		};
+		C313694F239679B1000E0230 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C379A27D23E8221900774850 /* Realm Repository */,
+				C3A6469E23E0A37600E6E6EA /* VKRequest */,
+				C3A6469D23E0A36100E6E6EA /* Realm */,
+				C39048E623D9798D00800D8C /* Extension.swift */,
+				C35B9C7923ECA8B700B1F480 /* CustomPhotoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C323B034239997860099B2AC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C323B035239998000099B2AC /* CustomImageView.swift */,
+				C37BEC4E239A3F6900C4880D /* LikeButton.swift */,
+				C33D679823ABED95001FA624 /* loader.xib */,
+				C33D679C23ABF66B001FA624 /* loader.swift */,
+				C33D679A23ABF099001FA624 /* RoundView.swift */,
+				C3136958239683F2000E0230 /* AllGroupList.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C379A27D23E8221900774850 /* Realm Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C379A27E23E8228200774850 /* FriendRepository.swift */,
+				C38BA8BA23E89A36003EE471 /* GroupRepository.swift */,
+			);
+			path = "Realm Repository";
+			sourceTree = "<group>";
+		};
+		C39048E323D9782700800D8C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C39048E423D9784300800D8C /* VKApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C3A6469D23E0A36100E6E6EA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				C3A6469723E09E0C00E6E6EA /* GroupRealm.swift */,
+				C3A6469923E09E2700E6E6EA /* FriendRealm.swift */,
+				C3A6469B23E09E5900E6E6EA /* UserRealm.swift */,
+				C38BA8BC23E89ED0003EE471 /* PhotoRealm.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		C3A6469E23E0A37600E6E6EA /* VKRequest */ = {
+			isa = PBXGroup;
+			children = (
+				C3EFC58D23D99A7400870BC6 /* GroupRequest.swift */,
+				C3EFC58F23D9A4E400870BC6 /* FriendRequest.swift */,
+				C3EFC58B23D996A500870BC6 /* PhotoRequest.swift */,
+				C3152CED23DEC393001DB086 /* CommonResponse.swift */,
+				C362BBB423E0A86A004AEF97 /* NewsRequest.swift */,
+			);
+			path = VKRequest;
+			sourceTree = "<group>";
+		};
+		C3EFC58523D97E5700870BC6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C3EFC58A23D9926F00870BC6 /* News */,
+				C3EFC58923D97FF600870BC6 /* FriendPhoto */,
+				C3EFC58823D97FB000870BC6 /* Group */,
+				C3EFC58723D97EA400870BC6 /* Friend */,
+				C3EFC58623D97E7800870BC6 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C3EFC58623D97E7800870BC6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C31284B5238922FA00CD0810 /* LoginController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C3EFC58723D97EA400870BC6 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				C3136949239647D4000E0230 /* FriendCell.swift */,
+				C31369472396340A000E0230 /* FriendList.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		C3EFC58823D97FB000870BC6 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				C31369562396813E000E0230 /* GroupCell.swift */,
+				C31369542396811E000E0230 /* GroupList.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		C3EFC58923D97FF600870BC6 /* FriendPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				C313694D23965575000E0230 /* FriendPhotoCell.swift */,
+				C313694B239653B6000E0230 /* FriendPhotoList.swift */,
+			);
+			path = FriendPhoto;
+			sourceTree = "<group>";
+		};
+		C3EFC58A23D9926F00870BC6 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				C3732FAF23AAB0BE00579F04 /* NewsCell.swift */,
+				C3D0A66023AAAA2400C916EE /* NewsList.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		D26FB63E5846CF8861AFD9DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3B1C15723B60C3D008F024B /* INSPhotoGallery.framework */,
+				010C401D80C59977CA95D0A8 /* Pods_vkontakte.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C31284AD238922FA00CD0810 /* vkontakte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31284C22389230000CD0810 /* Build configuration list for PBXNativeTarget "vkontakte" */;
+			buildPhases = (
+				994FFD021B6AAB24896175B4 /* [CP] Check Pods Manifest.lock */,
+				C31284AA238922FA00CD0810 /* Sources */,
+				C31284AB238922FA00CD0810 /* Frameworks */,
+				C31284AC238922FA00CD0810 /* Resources */,
+				432B75179F966084B5756DBD /* [CP] Embed Pods Frameworks */,
+				C3B1C15A23B60C3D008F024B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vkontakte;
+			productName = vkontakte;
+			productReference = C31284AE238922FA00CD0810 /* vkontakte.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C31284A6238922FA00CD0810 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Home;
+				TargetAttributes = {
+					C31284AD238922FA00CD0810 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C31284A9238922FA00CD0810 /* Build configuration list for PBXProject "vkontakte" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C31284A5238922FA00CD0810;
+			productRefGroup = C31284AF238922FA00CD0810 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C31284AD238922FA00CD0810 /* vkontakte */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C31284AC238922FA00CD0810 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31284BE2389230000CD0810 /* LaunchScreen.storyboard in Resources */,
+				C31284BB2389230000CD0810 /* Assets.xcassets in Resources */,
+				C33D679923ABED95001FA624 /* loader.xib in Resources */,
+				C31284B9238922FA00CD0810 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		432B75179F966084B5756DBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vkontakte/Pods-vkontakte-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vkontakte/Pods-vkontakte-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vkontakte/Pods-vkontakte-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		994FFD021B6AAB24896175B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vkontakte-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C31284AA238922FA00CD0810 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C313694E23965575000E0230 /* FriendPhotoCell.swift in Sources */,
+				C35B9C7A23ECA8B700B1F480 /* CustomPhotoModel.swift in Sources */,
+				C3732FB023AAB0BE00579F04 /* NewsCell.swift in Sources */,
+				C39048E523D9784300800D8C /* VKApi.swift in Sources */,
+				C3152CEE23DEC393001DB086 /* CommonResponse.swift in Sources */,
+				C39048E723D9798D00800D8C /* Extension.swift in Sources */,
+				C3EFC59023D9A4E400870BC6 /* FriendRequest.swift in Sources */,
+				C33D679B23ABF099001FA624 /* RoundView.swift in Sources */,
+				C31369572396813E000E0230 /* GroupCell.swift in Sources */,
+				C31284B6238922FA00CD0810 /* LoginController.swift in Sources */,
+				C38BA8BD23E89ED0003EE471 /* PhotoRealm.swift in Sources */,
+				C3A6469823E09E0C00E6E6EA /* GroupRealm.swift in Sources */,
+				C3A6469C23E09E5900E6E6EA /* UserRealm.swift in Sources */,
+				C31284B2238922FA00CD0810 /* AppDelegate.swift in Sources */,
+				C313694C239653B6000E0230 /* FriendPhotoList.swift in Sources */,
+				C31369552396811E000E0230 /* GroupList.swift in Sources */,
+				C38BA8BB23E89A36003EE471 /* GroupRepository.swift in Sources */,
+				C3EFC58E23D99A7400870BC6 /* GroupRequest.swift in Sources */,
+				C3D0A66123AAAA2400C916EE /* NewsList.swift in Sources */,
+				C3136959239683F2000E0230 /* AllGroupList.swift in Sources */,
+				C37BEC4F239A3F6900C4880D /* LikeButton.swift in Sources */,
+				C31284B4238922FA00CD0810 /* SceneDelegate.swift in Sources */,
+				C33D679D23ABF66B001FA624 /* loader.swift in Sources */,
+				C31369482396340A000E0230 /* FriendList.swift in Sources */,
+				C313694A239647D4000E0230 /* FriendCell.swift in Sources */,
+				C3A6469A23E09E2700E6E6EA /* FriendRealm.swift in Sources */,
+				C3EFC58C23D996A500870BC6 /* PhotoRequest.swift in Sources */,
+				C362BBB523E0A86A004AEF97 /* NewsRequest.swift in Sources */,
+				C323B036239998000099B2AC /* CustomImageView.swift in Sources */,
+				C379A27F23E8228200774850 /* FriendRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C31284B7238922FA00CD0810 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31284B8238922FA00CD0810 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C31284BC2389230000CD0810 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31284BD2389230000CD0810 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C31284C02389230000CD0810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C31284C12389230000CD0810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C31284C32389230000CD0810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE50A348E1CBDEAB7EB44F2B /* Pods-vkontakte.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5YT5383FD;
+				INFOPLIST_FILE = vkontakte/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = homecompany.vkontakte;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C31284C42389230000CD0810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CDCD6F854BAE3741341DE07 /* Pods-vkontakte.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5YT5383FD;
+				INFOPLIST_FILE = vkontakte/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = homecompany.vkontakte;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C31284A9238922FA00CD0810 /* Build configuration list for PBXProject "vkontakte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31284C02389230000CD0810 /* Debug */,
+				C31284C12389230000CD0810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31284C22389230000CD0810 /* Build configuration list for PBXNativeTarget "vkontakte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31284C32389230000CD0810 /* Debug */,
+				C31284C42389230000CD0810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C31284A6238922FA00CD0810 /* Project object */;
+}
