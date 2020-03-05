@@ -9,12 +9,14 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 5.0)
   - INSPhotoGallery
   - Kingfisher
   - RealmSwift
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Kingfisher
     - Realm
     - RealmSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: a35381fa0288fd89eb368719a5361d74d2e323e2
+PODFILE CHECKSUM: ede0ea277bc8cf73aec58944b0051504d74334b5
 
 COCOAPODS: 1.8.4

@@ -4,7 +4,8 @@
 target 'vkontakte' do
   use_frameworks!
   pod 'INSPhotoGallery'
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.0'
   pod 'RealmSwift'
   pod 'Kingfisher'
+  pod 'SwiftyJSON', '~> 4.0'
 end

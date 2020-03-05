@@ -44,7 +44,7 @@ class VKApi {
         getData(requestURL: request, parameters: params) { completion($0) }
     }
 
-    func getNewsList(token: String, completion: @escaping (Swift.Result<[News], Error>) -> Void) {
+    func getNewsList(token: String, completion: @escaping (Swift.Result<Any, Error>) -> Void) {
         let request = vkURL + "newsfeed.get"
 
         let params: [String: Any] = [
@@ -54,7 +54,7 @@ class VKApi {
             "v": "5.103"
         ]
 
-        getData(requestURL: request, parameters: params) { completion($0) }
+        getJSONData(requestURL: request, parameters: params) { completion($0) }
     }
 
     func getGroupList(token: String, completion: @escaping (Swift.Result<[Group], Error>) -> Void) {
@@ -79,6 +79,21 @@ class VKApi {
         ]
 
         getData(requestURL: request, parameters: params) { completion($0) }
+    }
+    
+    func getJSONData(requestURL: String, parameters: Parameters, completion: @escaping (Swift.Result<Any, Error>) -> Void) {
+        AF.request(requestURL,
+                          method: .post,
+                          parameters: parameters)
+            .responseJSON { response in
+                switch response.result {
+                    case .success(let json):
+                        completion(.success(json))
+                    case .failure(let error):
+                        //print(error)
+                        completion(.failure(error))
+                }
+        }
     }
     
     func getData<T: Decodable>(requestURL: String, parameters: Parameters, completion: @escaping (Swift.Result<[T], Error>) -> Void) {
