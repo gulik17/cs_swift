@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.0.0)
+  - INSPhotoGallery (1.2.8)
+  - Kingfisher (5.13.1):
+    - Kingfisher/Core (= 5.13.1)
+  - Kingfisher/Core (5.13.1)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0)
+  - INSPhotoGallery
+  - Kingfisher
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - INSPhotoGallery
+    - Kingfisher
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
+  INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
+  Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: bd01eb75e1b4ea168647e1863b4209c9d2893faf
+
+COCOAPODS: 1.8.4
