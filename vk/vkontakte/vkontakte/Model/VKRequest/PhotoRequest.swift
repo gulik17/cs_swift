@@ -53,11 +53,4 @@ struct Like: Decodable {
         case isLiked = "user_likes"
         case count
     }
-    
-    func toRealm() -> LikeRealm {
-        let likeRealm = LikeRealm()
-        likeRealm.count = count
-        likeRealm.isLiked = isLiked
-        return likeRealm
-    }
 }
