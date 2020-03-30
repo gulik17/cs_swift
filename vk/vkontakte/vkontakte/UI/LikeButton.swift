@@ -9,15 +9,15 @@
 import UIKit
 
 class LikeButton: UIButton {
-    var likeCount = 99
-     var isLiked: Bool = false {
-        didSet {
-            if isLiked {
-                setLike()
-            } else {
-                unsetLike()
-            }
-        }
+    var likeCount = 0
+    var isLiked: Bool = false {
+       didSet {
+           if isLiked {
+               setLike()
+           } else {
+               unsetLike()
+           }
+       }
     }
 
     override init(frame: CGRect) {

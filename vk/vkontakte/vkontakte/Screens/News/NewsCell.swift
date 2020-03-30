@@ -8,10 +8,16 @@
 
 import UIKit
 class NewsCell: UITableViewCell {
+    @IBOutlet weak var NewsOwnerImage: UIImageView!
+    @IBOutlet weak var NewsOwnerLabel: UILabel!
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsLike: UIButton!
     @IBOutlet weak var newsComments: UIButton!
     @IBOutlet weak var newsRepost: UIButton!
     @IBOutlet weak var newsViews: UIButton!
+    
+    @IBAction func newsMoreBtn(_ sender: Any) {
+        //newsTitle.numberOfLines = 0
+    }
 }
